@@ -12,7 +12,7 @@ import PropertyList from './components/PropertyList/PropertyList.jsx';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css"; 
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.js';
-import about from './components/About/About.jsx'; // Import the About component
+import About from './components/About/About.jsx'; // Import the About component
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import ComparisonPage from './components/ComparisonPage/comparisonPage.jsx'; // Import the comparison page
 import { ComparisonProvider } from './context/ComparisonContext'; // Import the context provider
@@ -23,8 +23,9 @@ import FormPage from './components/FormPage/FormPage.jsx';
 import EditProfile from './components/EditProfile/EditProfile.jsx';
 import EditProperty from './components/EditProperties/EditProperty.jsx';
 import  Why from './components/Why/Why.jsx';
-import Frontarea from './components/Frontarea/frontarea.jsx';
-import AreaConverter from './components/AreaConverter/areaconverter.jsx';
+import Frontarea from './components/Frontarea/FrontArea.jsx';
+import AreaConverter from './components/AreaConverter/AreaConverter.jsx';
+import Listedproperties from './components/ListedProperties/ListedProperties.jsx';  
 
 
 
@@ -48,8 +49,7 @@ function App() {
                   </div>
                   
                   <Frontarea />
-                  <FAQ />
-                  <Services />
+                  {/* <Services /> */}
                   <Footer />
                 </>
               }
