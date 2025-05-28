@@ -1,0 +1,106 @@
+.property-suggestions {
+  width: 100%;
+  margin-top: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ccc transparent;
+}
+
+.suggestion-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: calc(30% - 10px); /* Three items per row */
+  min-width: 250px; /* Prevents items from being too small */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.suggestion-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.suggestion-item h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.suggestion-item p {
+  margin: 5px 0;
+}
+
+.propertyS {
+  background: #fff;
+  border: 1px solid #f9f8f8;
+  border-radius: 2px;
+  overflow: hidden;
+  min-width: 250px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.propertyS img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Added transition for smooth scaling */
+}
+
+.propertyS img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+.propertyS button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+.propertyS button:hover {
+  background-color: #444;
+}
+.propertyS-details {
+  padding: 10px;
+  display: flex;
+  font-size: 90%;
+  justify-content: space-between;
+}
+.detailS{
+  
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .suggestion-item {
+    width: calc(50% - 10px); /* Two items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .suggestion-item {
+    width: 100%; /* Single item per row */
+  }
+}

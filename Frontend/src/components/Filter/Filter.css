@@ -1,0 +1,102 @@
+.Filter {
+    background-color: #ffffff; /* Clean white background */
+    background: linear-gradient(145deg, #f9f9f9, #e0e0e0); /* Gradient background for depth */
+    padding: 40px; /* Increased padding for spacious feel */
+    border-radius: 16px; /* More rounded corners for a softer look */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Subtle shadow with more depth */
+    margin: 30px 0; /* Increased margin for better spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.Filter:hover {
+    transform: translateY(-8px); /* Stronger lift effect on hover */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.Filter h1 {
+    font-weight: 800; /* Bolder font weight for title */
+    font-size: 36px; /* Larger font size for more impact */
+    text-align: center; /* Center the title */
+    margin-bottom: 30px; /* Increased space below the title */
+    color: #333; /* Darker color for better readability */
+    letter-spacing: 1px; /* Slight letter-spacing for a modern feel */
+    text-transform: uppercase; /* Make title uppercase for emphasis */
+}
+
+.top {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    margin-bottom: 20px; /* Space below the top section */
+}
+
+.item {
+    flex: 1; /* Allow items to grow equally */
+    margin: 0 20px; /* Larger margin between items */
+}
+
+.label {
+    font-size: 18px; /* Increased font size for better readability */
+    font-weight: bold; /* Bold labels */
+    margin-bottom: 8px; /* Space below labels */
+    color: #555; /* Darker color for labels */
+    text-transform: capitalize; /* Capitalize labels */
+}
+
+input, select {
+    width: 100%; /* Full width for inputs and selects */
+    padding: 12px; /* Slightly larger padding for a more comfortable input */
+    border: 2px solid #007bff; /* Blue border for inputs */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 15px; /* Adjusted font size for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+    background-color: #ffffff; /* White background for inputs */
+    outline: none; /* Remove default outline */
+}
+
+input:focus, select:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.5); /* Add shadow on focus */
+}
+
+.search-button {
+    background-color: #28a745; /* Green background for the button */
+    color: white; /* White text */
+    padding: 15px 25px; /* Increased padding for better button feel */
+    border: none; /* No border */
+    border-radius: 50px; /* Fully rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Slightly larger font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    width: 80%; /* Full width for button */
+    font-weight: 700; /* Bolder text for button */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for button */
+    margin-top: 25px; /* Space above the button */
+    display: block; /* Center the button */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-4px); /* Slight lift effect on hover */
+}
+
+.bottom {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+    justify-content: space-between; /* Space between items */
+    margin-top: 20px; /* Space above the bottom section */
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column } /* Stack items vertically on smaller screens */
+
+    .item {
+        margin: 10px 0; /* Adjust margin for stacked items */
+    }
+
+    .search-button {
+        width: 100%; /* Full width for button on small screens */
+    }
+} 

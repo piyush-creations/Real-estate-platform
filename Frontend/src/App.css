@@ -1,0 +1,9 @@
+.scroll-list{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+
+.main-content-wrapper {
+    padding-top: 70px; /* Match or slightly exceed your navbar height */
+  }

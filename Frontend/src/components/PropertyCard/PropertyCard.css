@@ -1,0 +1,94 @@
+.property-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .property-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .property-details {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .property-details h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  
+  .property-details p {
+    color: #777;
+    margin: 0.5rem 0;
+  }
+  
+  .property-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .property-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .book-now {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .property-price span {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .property-image {
+      height: 150px;
+    }
+  
+    .property-details h3 {
+      font-size: 1rem;
+    }
+  
+    .property-info span {
+      font-size: 0.875rem;
+    }
+  
+    .property-price span {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .property-image {
+      height: 100px;
+    }
+  
+    .property-details h3 {
+      font-size: 0.875rem;
+    }
+  
+    .property-info span {
+      font-size: 0.75rem;
+    }
+  
+    .property-price span {
+      font-size: 0.875rem;
+    }
+  }
+  

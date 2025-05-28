@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  background: linear-gradient(120deg, #f0f4ff, #fef6fb);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.area-pro-container {
+  max-width: 520px;
+  margin: 6rem auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  animation: slideFade 0.6s ease-in-out;
+  margin-top: 7%;
+}
+
+.area-pro-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.2rem;
+  background: linear-gradient(90deg, #0f4db1, #022b51);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.form-group label,
+.unit-box label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.form-group input,
+.unit-box select {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.unit-box select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+.unit-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 1.6rem 0;
+}
+
+.unit-box {
+  flex: 1;
+}
+
+.swap-button {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #475569;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.swap-button:hover {
+  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+  transform: rotate(180deg) scale(1.1);
+}
+
+.convert-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #2674f1, #04366a);
+  color: white;
+  padding: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.3);
+}
+
+.convert-btn:hover {
+  background: linear-gradient(135deg, #031c52, #0d0018);
+  transform: scale(1.03);
+  box-shadow: 0 10px 26px rgba(59, 130, 246, 0.35);
+}
+
+.result-box {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 5px solid #6366f1;
+  padding: 1.3rem;
+  border-radius: 12px;
+  font-size: 17px;
+  color: #1f2937;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .area-pro-container {
+    padding: 2rem;
+    margin-top: 4rem;
+  }
+
+  .unit-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .swap-button {
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  .swap-button:hover {
+    transform: rotate(270deg) scale(1.1);
+  }
+}
+.area-pro-container {
+  position: relative; /* for blurred icon */
+}
+
+.top-illustration {
+  width: 80px;
+  margin: 0 auto 20px;
+  display: block;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(214, 12, 12, 0.1));
+}
+
+.area-pro-container::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background: url('https://cdn-icons-png.flaticon.com/512/9830/9830714.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.05;
+  z-index: 0;
+}

@@ -1,0 +1,221 @@
+/* Base Styles */
+.property-listing-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Form Styles */
+.property-listing-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.section-title {
+  color: #3498db;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.subsection-title {
+  color: #7f8c8d;
+  margin: 15px 0;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-group {
+  flex: 1 1 200px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.full-width {
+  flex: 0 0 100%;
+}
+
+/* Input Styles */
+.form-input,
+.form-select,
+.form-textarea,
+.distance-input,
+.distance-unit,
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s;
+  display: block;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+/* Facility Distance Inputs */
+.facility-group {
+  margin-bottom: 15px;
+}
+
+.distance-group {
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.distance-input {
+  flex: 2;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.distance-unit {
+  flex: 1;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background: #f9f9f9;
+}
+
+/* File Input Styles */
+.form-file {
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Button Styles */
+.form-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-listing-form {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .distance-group {
+    flex-direction: column;
+  }
+
+  .distance-input,
+  .distance-unit {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+}

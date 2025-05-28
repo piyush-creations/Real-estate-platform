@@ -1,0 +1,37 @@
+/* PropertyPage.css */
+
+
+
+
+.property-page {
+    display: flex;
+    height: 100%;
+     
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 5%;
+  }
+  
+  .property-header h1 {
+    font-size: 2.5em;
+  }
+  
+  .property-description h3,
+  .property-features h3,
+  .agent-info h3,
+  .inquiry-form h3,
+  .related-properties h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .image-gallery img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Add other CSS styles as needed */
+  

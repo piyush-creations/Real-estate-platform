@@ -1,0 +1,130 @@
+.slider {
+    min-width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      z-index: 10;
+
+      &.prev {
+        left: 10px;
+      }
+
+      &.next {
+        right: 10px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .dots {
+      display: flex;
+      gap: 5px;
+      margin-top: 10px;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: lightgray;
+        cursor: pointer;
+
+        &.active {
+          background-color: gray;
+        }
+      }
+    }
+
+    &.single {
+      img {
+        cursor: default;
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    &.empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: gray;
+    }
+  }
+
+  // Fullscreen modal styling
+  .fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+
+    .modal-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+
+        &.prev {
+          left: 10px;
+        }
+
+        &.next {
+          right: 10px;
+        }
+
+        &.close {
+          top: 10px;
+          right: 10px;
+          font-size: 30px;
+          color: white;
+        }
+      }
+    }
+  }

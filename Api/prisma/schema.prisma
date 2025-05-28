@@ -1,0 +1,127 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id              String                   @id @default(auto()) @map("_id") @db.ObjectId
+  email           String                   @unique
+  username        String                   @unique
+  password        String
+  contact         String? // ⬅️ Add "?" to make it optional
+  gender          String? // ⬅️ Add "?"
+  dob             String? // ⬅️ Add "?"
+  occupation      String? // ⬅️ Add "?"
+  profilePicture  String? // ⬅️ Add "?"
+  createdat       DateTime                 @default(now())
+  properties      Property[]               @relation("UserProperties")
+  recentlyViewed  RecentlyViewedProperty[]
+  savedProperties SavedProperty[]
+}
+
+model RecentlyViewedProperty {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @db.ObjectId
+  propertyId String   @db.ObjectId
+  viewedAt   DateTime @default(now())
+
+  user     user     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@index([userId])
+  @@index([propertyId])
+}
+
+model Property {
+  id                      String   @id @default(auto()) @map("_id") @db.ObjectId
+  ownerId                 String?  @db.ObjectId
+  owner                   user?    @relation("UserProperties", fields: [ownerId], references: [id])
+  propertyFor             String
+  propertyType            String
+  Location                String
+  Bedrooms                Int
+  Bathrooms               Int
+  Area                    Int
+  Price                   Int
+  Negotiable              Boolean
+  MonthlyRent             String?
+  FurnishedStatus         String
+  Age                     Int
+  SecurityDeposit         Int?
+  pFacing                 String?
+  Floornumber             Int?
+  Flatnumber              String?
+  MaintenanceCharges      Int?
+  LeaseDuration           Int?
+  Floors                  Int?
+  Security                Boolean?
+  Mattress             Boolean?
+  Power                   Boolean?
+  FireSafety              Boolean?
+  Air                     Boolean?
+  Wifi                    Boolean?
+  Meals                   Boolean?
+  Fridge                  Boolean?
+  Balcony                 Boolean?
+  Water                   Boolean?
+  Garden                  Boolean?
+  Pool                    Boolean?
+  Parking                 Boolean?
+  railwayAvailability     String?
+  railwayDistance         String?
+  railwayDistanceUnit     String?
+  hospitalAvailability    String?
+  hospitalDistance        String?
+  hospitalDistanceUnit    String?
+  busStandAvailability    String?
+  busStandDistance        String?
+  busStandDistanceUnit    String?
+  schoolAvailability      String?
+  schoolDistance          String?
+  schoolDistanceUnit      String?
+  restaurantAvailability String?
+  restaurantDistance      String?
+  restaurantDistanceUnit  String?
+  description             String?
+  Features                Json
+  photos                  String[]
+  dateposted              DateTime @default(now())
+
+  viewers RecentlyViewedProperty[]
+  savedBy SavedProperty[]
+}
+
+model SavedProperty {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String   @db.ObjectId
+  propertyId String   @db.ObjectId
+  savedAt    DateTime @default(now())
+
+  user     user     @relation(fields: [userId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@index([userId])
+  @@index([propertyId])
+}
+
+model ContactMessage {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  phone     String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+
+// whenever make changes here run ( npx prisma db push)
