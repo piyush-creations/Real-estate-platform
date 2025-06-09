@@ -52,6 +52,7 @@ const LoginPage = ({ isSignUp: initialSignUp }) => {
 
         const response = await axios.post(
           "http://localhost:8800/api/auth/register",
+          "https://real-estate-platform-akzo.onrender.com/api/auth/register",
           { username, email, password }
         );
 
@@ -63,6 +64,7 @@ const LoginPage = ({ isSignUp: initialSignUp }) => {
       } else {
         const response = await axios.post(
           "http://localhost:8800/api/auth/login",
+          "https://real-estate-platform-akzo.onrender.com/api/auth/login",
           { email, password },
           { withCredentials: true }
         );
