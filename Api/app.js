@@ -12,7 +12,24 @@ import contactRoute from './routes/contact.route.js';
 const app = express();
 
 // Enable CORS with credentials support
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+const allowedOrigins = [
+  "http://localhost:3000", // Local frontend (for development)
+  "https://real-estate-platform-two.vercel.app" // Deployed Vercel frontend
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
